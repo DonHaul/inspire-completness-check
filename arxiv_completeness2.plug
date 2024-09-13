@@ -1,6 +1,6 @@
 [Core]
-Name = ArxivCompleteness
-Module = arxiv_completeness
+Name = ArxivCompleteness2
+Module = arxiv_completeness2
 
 [Documentation]
 Description = This will warn us about the arxiv completeness

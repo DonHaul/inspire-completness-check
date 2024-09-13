@@ -20,7 +20,7 @@ def get_default_from_date():
 
 class ArxivCompleteness2(CrontabMixin, BotPlugin):
     """
-    Arxiv Completeness Errbot Plugin
+    Arxiv Completeness2 Errbot Plugin
 
     """
 
