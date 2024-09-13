@@ -24,11 +24,12 @@ class ArxivCompleteness(CrontabMixin, BotPlugin):
 
     """
 
-    CRONTAB = [" 0 10 * * 1-5 .daily_check"]
+    CRONTAB = ["0 10 * * 1-5 .daily_check",
+               "* * * * * .test2"]
 
     @arg_botcmd("--from-date", dest="from_date", type=str, default=None)
     @arg_botcmd("--to-date", dest="to_date", type=str, default=None)
-    def arxiv(self, msg, from_date, to_date):
+    def arxivv(self, msg, from_date, to_date):
         """
         Command that retrieves information regarding the harvesting between two dates
         """
@@ -44,8 +45,24 @@ class ArxivCompleteness(CrontabMixin, BotPlugin):
         yield "Arxiv Completeness Check may take some time, please be patient"
         yield arxiv_completness_check_script.completeness_check(from_date, to_date)
 
+    def test2(self, polled_time):
+        client = self._bot.client
+
+        print("wow")
+        yield "bruh"
+
+        client.send_message(
+            {
+                "type": "stream",
+                "to": "inspire",
+                "topic": "harvest",
+                "content": "uhum",
+            }
+        )
+
     def daily_check(self, polled_time):
         client = self._bot.client
+
 
         message = arxiv_completness_check_script.completeness_check(
             get_default_from_date(), date.today()
@@ -59,3 +76,4 @@ class ArxivCompleteness(CrontabMixin, BotPlugin):
                 "content": message,
             }
         )
+
