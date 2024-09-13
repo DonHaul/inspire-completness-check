@@ -26,7 +26,7 @@ class ArxivCompleteness2(CrontabMixin, BotPlugin):
     """
 
     CRONTAB = ["0 10 * * 1-5 .daily_check",
-               "* * * * * .test2"]
+               "* 10 * * * .test2"]
 
     @arg_botcmd("--from-date", dest="from_date", type=str, default=None)
     @arg_botcmd("--to-date", dest="to_date", type=str, default=None)
@@ -57,7 +57,7 @@ class ArxivCompleteness2(CrontabMixin, BotPlugin):
                 "type": "stream",
                 "to": "inspire",
                 "topic": "harvest",
-                "content": "uhum",
+                "content": "1",
             }
         )
 
