@@ -143,7 +143,7 @@ def prepare_message(
     message = (
         f"""
 **ArXiv Harvest Check** started at {check_start_time}.
-Summarsssy:\n"""
+Summarsssy3:\n"""
         + f"* **{len(arxiv_eprints)}** eprints published by"
         f" ArXiv from {from_date} to {to_date}, "
         f" **{number_of_holdingpen_matches}**"

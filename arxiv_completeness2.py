@@ -1,4 +1,5 @@
 from datetime import date, datetime, timedelta
+import logging
 
 from errbot import BotPlugin, arg_botcmd
 from errcron import CrontabMixin
@@ -42,14 +43,14 @@ class ArxivCompleteness2(CrontabMixin, BotPlugin):
         else:
             to_date = date.today()
 
-        yield "Arxiv Completeness Wont may take some time, please be patient"
+        yield "Arxiv Completeness Wont 23may take some time, please be patient"
         yield arxiv_completness_check_script.completeness_check(from_date, to_date)
 
     def test2(self, polled_time):
         client = self._bot.client
 
         print("wow")
-        yield "bruh"
+        logging.info("BOOM")
 
         client.send_message(
             {
