@@ -42,7 +42,7 @@ class ArxivCompleteness2(CrontabMixin, BotPlugin):
         else:
             to_date = date.today()
 
-        yield "Arxiv Completeness Check may take some time, please be patient"
+        yield "Arxiv Completeness Wont may take some time, please be patient"
         yield arxiv_completness_check_script.completeness_check(from_date, to_date)
 
     def test2(self, polled_time):
