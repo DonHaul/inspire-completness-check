@@ -18,7 +18,7 @@ def get_default_from_date():
     return TODAY - timedelta(days=1)
 
 
-class ArxivCompleteness(CrontabMixin, BotPlugin):
+class ArxivCompleteness2(CrontabMixin, BotPlugin):
     """
     Arxiv Completeness Errbot Plugin
 
